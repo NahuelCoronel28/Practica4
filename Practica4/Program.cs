@@ -9,33 +9,7 @@ namespace Practica4
     {
         static void Main(string[] args)
         {
-            Teacher profesor = new Teacher();
-            List <AlumnoAdapter> lista_auxiliar = new List<AlumnoAdapter>();
-            for (int i = 1; i <= 10; i++)
-            {
-                Comparable comparable_auxiliar1 = FabricaDeComparables.crearAleatorio(3);
-                AlumnoAdapter alumno_aux = new AlumnoAdapter ((Alumno)comparable_auxiliar1);
-                alumno_aux.getAlumno().setComparadorAlumno(new PorCalificacion());
-                profesor.goToClass(alumno_aux);
-                //StudentsFactory a = new StudentsFactory(alumno_aux);
-                //a.creadorDeDecoradores();
-
-                Comparable comparable_auxiliar2 = FabricaDeComparables.crearAleatorio(5);
-                AlumnoAdapter alumno_aux2 = new AlumnoAdapter((Alumno)comparable_auxiliar2);
-                alumno_aux2.getAlumno().setComparadorAlumno(new PorCalificacion());
-                profesor.goToClass(alumno_aux2);
-                //StudentsFactory b = new StudentsFactory(alumno_aux2);
-                //b.creadorDeDecoradores();
-                lista_auxiliar.Add(alumno_aux);
-                lista_auxiliar.Add(alumno_aux2);
-            }
-            profesor.teachingAClass();
-
-            foreach (AlumnoAdapter ele in lista_auxiliar)
-            {
-                StudentsFactory a = new StudentsFactory(ele);
-                a.creadorDeDecoradores();
-            }
+            inicioDeClases();
 
             Console.WriteLine("Hello world!");
         }
@@ -81,6 +55,36 @@ namespace Practica4
                 profesor.notificar();
                 profesor.escribirEnElPizarron();
                 profesor.notificar();
+            }
+        }
+        public static void inicioDeClases()
+        {
+            Teacher profesor = new Teacher();
+            List<AlumnoAdapter> lista_auxiliar = new List<AlumnoAdapter>();
+            for (int i = 1; i <= 10; i++)
+            {
+                Comparable comparable_auxiliar1 = FabricaDeComparables.crearAleatorio(3);
+                AlumnoAdapter alumno_aux = new AlumnoAdapter((Alumno)comparable_auxiliar1);
+                alumno_aux.getAlumno().setComparadorAlumno(new PorCalificacion());
+                profesor.goToClass(alumno_aux);
+                //StudentsFactory a = new StudentsFactory(alumno_aux);
+                //a.creadorDeDecoradores();
+
+                Comparable comparable_auxiliar2 = FabricaDeComparables.crearAleatorio(5);
+                AlumnoAdapter alumno_aux2 = new AlumnoAdapter((Alumno)comparable_auxiliar2);
+                alumno_aux2.getAlumno().setComparadorAlumno(new PorCalificacion());
+                profesor.goToClass(alumno_aux2);
+                //StudentsFactory b = new StudentsFactory(alumno_aux2);
+                //b.creadorDeDecoradores();
+                lista_auxiliar.Add(alumno_aux);
+                lista_auxiliar.Add(alumno_aux2);
+            }
+            profesor.teachingAClass();
+
+            foreach (AlumnoAdapter ele in lista_auxiliar)
+            {
+                StudentsFactory a = new StudentsFactory(ele);
+                a.creadorDeDecoradores();
             }
         }
     }
