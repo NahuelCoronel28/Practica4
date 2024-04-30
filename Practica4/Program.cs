@@ -65,14 +65,14 @@ namespace Practica4
             {
                 Comparable comparable_auxiliar1 = FabricaDeComparables.crearAleatorio(3);
                 AlumnoAdapter alumno_aux = new AlumnoAdapter((Alumno)comparable_auxiliar1);
-                //alumno_aux.getAlumno().setComparadorAlumno(new PorCalificacion());
+                
                 
                 StudentsFactory a = new StudentsFactory(alumno_aux);
                 profesor.goToClass(a.creadorDeDecoradores());
 
                 Comparable comparable_auxiliar2 = FabricaDeComparables.crearAleatorio(5);
                 AlumnoAdapter alumno_aux2 = new AlumnoAdapter((Alumno)comparable_auxiliar2);
-                //alumno_aux2.getAlumno().setComparadorAlumno(new PorCalificacion());
+                
                 
                 StudentsFactory b = new StudentsFactory(alumno_aux2);
                 profesor.goToClass(b.creadorDeDecoradores());
@@ -81,11 +81,7 @@ namespace Practica4
             }
             profesor.teachingAClass();
 
-            foreach (AlumnoAdapter ele in lista_auxiliar)
-            {
-                StudentsFactory a = new StudentsFactory(ele);
-                a.creadorDeDecoradores();
-            }
+            
         }
     }
 }
