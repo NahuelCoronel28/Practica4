@@ -60,7 +60,7 @@ namespace Practica4
         public static void inicioDeClases()
         {
             Teacher profesor = new Teacher();
-            List<AlumnoAdapter> lista_auxiliar = new List<AlumnoAdapter>();
+           
             for (int i = 1; i <= 10; i++)
             {
                 Comparable comparable_auxiliar1 = FabricaDeComparables.crearAleatorio(3);
@@ -76,8 +76,7 @@ namespace Practica4
                 
                 StudentsFactory b = new StudentsFactory(alumno_aux2);
                 profesor.goToClass(b.creadorDeDecoradores());
-                lista_auxiliar.Add(alumno_aux);
-                lista_auxiliar.Add(alumno_aux2);
+                
             }
             profesor.teachingAClass();
 
