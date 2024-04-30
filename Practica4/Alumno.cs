@@ -16,7 +16,7 @@ namespace Practica4
         {
             this.legajo = legajo;
             this.promedio = promedio;
-            comparadorAlumno = new PorDNI();
+            comparadorAlumno = new PorCalificacion();
             int calificacion = 0;
         }
         public int getLegajo()

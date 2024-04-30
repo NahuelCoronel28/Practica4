@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace Practica4
 {
-    internal abstract class DecoradorAlumno : IAlumno
+    internal abstract class DecoradorAlumno : IAlumno,Comparable
     {
         IAlumno auxIAlumno;
         public DecoradorAlumno(IAlumno a)
         {
             this.auxIAlumno = a;
         }
-
+        public string getNombre()
+        {
+            return auxIAlumno.getNombre();
+        }
         public int getLegajo()
         {
             return this.auxIAlumno.getLegajo();
@@ -37,15 +40,15 @@ namespace Practica4
         }
         public bool sosIgual(Comparable c)
         {
-            return this.auxIAlumno.sosIgual(c);
+            return true;
         }
         public bool sosMenor(Comparable c)
         {
-            return this.auxIAlumno.sosMenor(c);
+            return true;
         }
         public bool sosMayor(Comparable c)
         {
-            return this.auxIAlumno.sosMayor(c);
+            return true;
         }
 
         public void prestarAtencion()

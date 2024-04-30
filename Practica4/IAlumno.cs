@@ -8,6 +8,7 @@ namespace Practica4
 {
     internal interface IAlumno
     {
+        public string getNombre();
         public int getLegajo();
         public int getPromedio();
         public void setComparadorAlumno(ComparacionAlumno aux);

@@ -8,20 +8,19 @@ namespace Practica4
 {
     internal class StudentsFactory : FabricaDeAlumnos
     {
-        Alumno alumno;
+        IAlumno alumno;
         public StudentsFactory(AlumnoAdapter alumno2)
         {
             this.alumno = alumno2.getAlumno();
         }
-        public void creadorDeDecoradores()
+        public AlumnoAdapter creadorDeDecoradores()
         {
-            IAlumno alumno3 = ((Alumno)this.alumno);
-            IAlumno decorador = new DecoradoConLegajo(alumno3);
+            //IAlumno alumno3 = ((Alumno)this.alumno);
+            IAlumno decorador = new DecoradoConLegajo(alumno);
             IAlumno decorador2 = new DecoradoConLetras(decorador);
             IAlumno decorador3 = new DecoradoConPromocion(decorador2);
             IAlumno decorador4 = new DecoradoConRecuadro(decorador3);
-            string resultado = decorador4.mostrarCalificacion();
-            Console.WriteLine(resultado);
+            return new AlumnoAdapter(decorador4);
         }
     }
 }

@@ -8,12 +8,12 @@ namespace Practica4
 {
     internal class AlumnoAdapter : Student
     {
-        Alumno alumno;
-        public AlumnoAdapter(Alumno alumno)
+        IAlumno alumno;
+        public AlumnoAdapter(IAlumno alumno)
         {
             this.alumno = alumno;
         }
-        public Alumno getAlumno()
+        public IAlumno getAlumno()
         {
             return alumno;
         }
@@ -35,15 +35,15 @@ namespace Practica4
         }
         public bool equals(Student student)
         {
-            return this.alumno.sosIgual(((AlumnoAdapter)student).getAlumno());
+            return this.alumno.sosIgual((Comparable)((AlumnoAdapter)student).getAlumno());
         }
         public bool lessThan(Student student)
         {
-            return this.alumno.sosMenor(((AlumnoAdapter)student).getAlumno());
+            return this.alumno.sosMenor(((Comparable)student));
         }
         public bool greaterThan(Student student)
         {
-            return this.alumno.sosMayor(((AlumnoAdapter)student).getAlumno());
+            return this.alumno.sosMayor(((Comparable)student));
         }
     }
 }
