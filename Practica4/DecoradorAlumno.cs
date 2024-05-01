@@ -13,6 +13,10 @@ namespace Practica4
         {
             this.auxIAlumno = a;
         }
+        public IAlumno getAlumno()
+        {
+            return auxIAlumno.getAlumno();
+        }
         public string getNombre()
         {
             return auxIAlumno.getNombre();
@@ -40,15 +44,15 @@ namespace Practica4
         }
         public bool sosIgual(Comparable c)
         {
-            return true;
+            return this.getAlumno().sosIgual(c);
         }
         public bool sosMenor(Comparable c)
         {
-            return true;
+            return this.getAlumno().sosMenor(c);
         }
         public bool sosMayor(Comparable c)
         {
-            return true;
+            return this.getAlumno().sosMayor(c);
         }
 
         public void prestarAtencion()

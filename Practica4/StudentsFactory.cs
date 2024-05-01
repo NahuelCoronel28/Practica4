@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetodologíasDeProgramaciónI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,8 @@ namespace Practica4
             IAlumno decorador2 = new DecoradoConLetras(decorador);
             IAlumno decorador3 = new DecoradoConPromocion(decorador2);
             IAlumno decorador4 = new DecoradoConRecuadro(decorador3);
-            return new AlumnoAdapter(decorador4);
+            Student alumnofinal = new AlumnoAdapter(decorador4);
+            return ((AlumnoAdapter)alumnofinal);
         }
     }
 }

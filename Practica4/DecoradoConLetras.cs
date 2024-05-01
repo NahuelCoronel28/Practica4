@@ -13,6 +13,10 @@ namespace Practica4
         {
             this.alu = a;
         }
+        public IAlumno getAlumno()
+        {
+            return base.getAlumno();
+        }
         public override string mostrarCalificacion()
         {
             string[] enLetras = new string[] {"CERO", "UNO","DOS","TRES","CUATRO","CINCO","SEIS","SIETE","OCHO","NUEVE","DIEZ"};

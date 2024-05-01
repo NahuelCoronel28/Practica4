@@ -64,6 +64,8 @@ namespace Practica4
             for (int i = 1; i <= 10; i++)
             {
                 Comparable comparable_auxiliar1 = FabricaDeComparables.crearAleatorio(3);
+                Alumno prueba = (Alumno)comparable_auxiliar1;
+                prueba.setComparadorAlumno(new PorCalificacion());
                 AlumnoAdapter alumno_aux = new AlumnoAdapter((Alumno)comparable_auxiliar1);
                 
                 
@@ -72,8 +74,9 @@ namespace Practica4
 
                 Comparable comparable_auxiliar2 = FabricaDeComparables.crearAleatorio(5);
                 AlumnoAdapter alumno_aux2 = new AlumnoAdapter((Alumno)comparable_auxiliar2);
-                
-                
+                Alumno prueba2 = (Alumno)comparable_auxiliar2;
+                prueba2.setComparadorAlumno(new PorCalificacion());
+
                 StudentsFactory b = new StudentsFactory(alumno_aux2);
                 profesor.goToClass(b.creadorDeDecoradores());
                 

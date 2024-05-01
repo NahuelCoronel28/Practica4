@@ -16,8 +16,12 @@ namespace Practica4
         {
             this.legajo = legajo;
             this.promedio = promedio;
-            comparadorAlumno = new PorCalificacion();
+            comparadorAlumno = new PorDNI();
             int calificacion = 0;
+        }
+        public IAlumno getAlumno()
+        {
+            return ((Alumno)this);
         }
         public int getLegajo()
         {
@@ -45,15 +49,15 @@ namespace Practica4
         }
         public override bool sosIgual(Comparable c)
         {
-            return comparadorAlumno.sosIgual(this, (Alumno)c);
+            return comparadorAlumno.sosIgual(this, ((Alumno)((IAlumno)c).getAlumno()));
         }
         public override bool sosMenor(Comparable c)
         {
-            return comparadorAlumno.sosMenor(this, (Alumno)c);
+            return comparadorAlumno.sosMenor(this, ((Alumno)((IAlumno)c).getAlumno()));
         }
         public override bool sosMayor(Comparable c)
         {
-            return comparadorAlumno.sosMayor(this, (Alumno)c);
+            return comparadorAlumno.sosMayor(this, ((Alumno)((IAlumno)c).getAlumno()));
         }
 
         public void prestarAtencion()

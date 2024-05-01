@@ -13,6 +13,10 @@ namespace Practica4
         {
             this.alu = a;
         }
+        public IAlumno getAlumno()
+        {
+            return base.getAlumno();
+        }
         public override string mostrarCalificacion()
         {
             string resultado = "***************************************\n" + " *        " + base.mostrarCalificacion() + "      * \n" + "***************************************";           

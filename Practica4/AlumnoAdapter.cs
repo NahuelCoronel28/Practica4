@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MetodologíasDeProgramaciónI;
 namespace Practica4
 {
-    internal class AlumnoAdapter : Student
+    internal class AlumnoAdapter : Student, Comparable
     {
         IAlumno alumno;
         public AlumnoAdapter(IAlumno alumno)
@@ -35,15 +35,27 @@ namespace Practica4
         }
         public bool equals(Student student)
         {
-            return this.alumno.sosIgual((Comparable)((AlumnoAdapter)student).getAlumno());
+            return this.getAlumno().sosIgual((Comparable)((AlumnoAdapter)student).getAlumno());
         }
         public bool lessThan(Student student)
         {
-            return this.alumno.sosMenor(((Comparable)student));
+            return this.getAlumno().sosMenor((Comparable)((AlumnoAdapter)student).getAlumno());
         }
         public bool greaterThan(Student student)
         {
-            return this.alumno.sosMayor(((Comparable)student));
+            return this.getAlumno().sosMayor((Comparable)((AlumnoAdapter)student).getAlumno());
+        }
+        public bool sosIgual(Comparable c)
+        {
+            return this.getAlumno().sosIgual(c);
+        }
+        public bool sosMenor(Comparable c)
+        {
+            return this.getAlumno().sosMenor(c);
+        }
+        public bool sosMayor(Comparable c)
+        {
+            return this.getAlumno().sosMayor(c);
         }
     }
 }

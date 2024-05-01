@@ -8,6 +8,7 @@ namespace Practica4
 {
     internal interface IAlumno
     {
+        public IAlumno getAlumno();
         public string getNombre();
         public int getLegajo();
         public int getPromedio();
